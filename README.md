@@ -1,4 +1,4 @@
-TryHookMe is a simple application for demos about Hooking with Frida
+TryHookMe is a simple application for demo about Hooking with Frida
 
 
 
