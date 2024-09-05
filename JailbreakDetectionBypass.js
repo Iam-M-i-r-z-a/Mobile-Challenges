@@ -14,13 +14,11 @@ if (ObjC.available) {
                 if (arg.indexOf(paths[path]) > -1) {
                     console.log("Hooking native function stat64: " + arg);
                     this.is_common_path = true;
-                    //return -1;
                 }
             }
         },
         onLeave: function(retval) {
             if (this.is_common_path) {
-                console.log("stat64 Bypass!!!");
                 retval.replace(-1);
             }
         }
@@ -32,15 +30,12 @@ if (ObjC.available) {
             var arg = Memory.readUtf8String(args[0]);
             for (var path in paths) {
                 if (arg.indexOf(paths[path]) > -1) {
-                    console.log("Hooking native function stat: " + arg);
                     this.is_common_path = true;
-                    //return -1;
                 }
             }
         },
         onLeave: function(retval) {
             if (this.is_common_path) {
-                console.log("stat Bypass!!!");
                 retval.replace(-1);
             }
         }
